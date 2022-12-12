@@ -1,11 +1,29 @@
-@import './Variables.scss';
-
+@import './core/Variables';
+@import './core/Reset';
 body{
-    padding: 30px;
+    background-color: #000000;
+}
+.header{
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   .logo{
+    height: 350px;
+   }
+}
+.list{
+    
+    margin: 40px;
 }
 ul{
-    display: flex;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    text-align: center;
 
 }
 li{
@@ -13,38 +31,58 @@ li{
     background-color: rgb(255, 218, 150);
     list-style: none;
     border:5px solid rgb(177, 120, 36); 
-   
     box-shadow: 10px 10px lightblue;
   
 }
-article{
-    padding: 20px;
+
+
+.card{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+
+    &__name{
+        border-bottom: 4px solid rgb(25, 141, 10); 
+        padding: 0px 30px 5px 30px;
+        color: red;
+        text-transform: uppercase;
+        font-family:$font-main;
+    }
+    &__species{
+        padding: 10px;
+        margin: 0;
+        color: rgb(4, 0, 255);
+        text-transform: uppercase;
+        font-family:$font-main;
+        align-self: center;
+    
+    }
+    &__img{
+        padding: 20px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+}
+
+
+
+.inputbox{
+    display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-
 }
-h2{
-    border-bottom: 4px solid rgb(25, 141, 10); 
-    margin: 0;
-    padding: 5px 30px 5px 30px;
-    color: red;
-    text-transform: uppercase;
-    font-family:$font-main;
-}
-h3{
-    padding: 10px;
-    margin: 0;
-    color: rgb(4, 0, 255);
-    text-transform: uppercase;
-    font-family:$font-main;
- 
-
-}
-img{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 7px;
+input{
+    font-size: 16px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: #fff;
+    border: 2px solid greenyellow;
+    border-radius: 4px;
 }
