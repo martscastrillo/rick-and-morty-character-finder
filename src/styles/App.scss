@@ -2,6 +2,7 @@
 @import './core/Reset';
 body{
     background-color: #000000;
+    font-family:$font-main;
 }
 .header{
     height: 300px;
@@ -13,76 +14,140 @@ body{
     height: 350px;
    }
 }
-.list{
-    
-    margin: 40px;
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70px;
 }
-ul{
+
+.list{
     flex-direction: row;
     justify-content: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    gap: 50px;
     text-align: center;
+    margin-bottom: 70px;
 
-}
-li{
-    border-radius: 7px;
-    background-color: rgb(255, 218, 150);
-    list-style: none;
-    border:5px solid rgb(177, 120, 36); 
-    box-shadow: 10px 10px lightblue;
-  
 }
 
 
 .card{
-
+    background-color: #10aec6;
+    list-style: none;
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
+    0 0 30px #a4f59c, 0 0 40px #a4f59c;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
+    
+    justify-content: space-around;
+    width: 275px;
+    .textbluebox{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
+    }
     &__name{
-        border-bottom: 4px solid rgb(25, 141, 10); 
-        padding: 0px 30px 5px 30px;
-        color: red;
+        border-bottom: 0.5px solid rgb(255, 255, 255); 
+        padding: 10px 30px 5px 30px;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
         text-transform: uppercase;
         font-family:$font-main;
     }
     &__species{
         padding: 10px;
         margin: 0;
-        color: rgb(4, 0, 255);
+        font-size: 14px;
+        color: rgb(255, 255, 255);
         text-transform: uppercase;
-        font-family:$font-main;
+       
         align-self: center;
     
     }
     &__img{
-        padding: 20px;
-        width: 200px;
-        height: 200px;
+     
+        width: 275px;
+       
         object-fit: cover;
-        border-radius: 7px;
+    
+    }
+    .logobox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 30px;
+        
+    }
+    .logostatus{
+     
+        width: 20px;
     }
 }
 
 
 
-.inputbox{
+.formbox{
     display: flex;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    padding: 10px;
+    gap:30px;
 
-}
-input{
+&__input{
+    color:gray;
+    width: 300px;
+    padding: 10px;
     font-size: 16px;
-    font-size: 16px;
+    height: 40px;
     font-family: inherit;
     background-color: #fff;
-    border: 2px solid greenyellow;
+    border: 2px solid rgb(140, 218, 22);
     border-radius: 4px;
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0ba9ca, 0 0 15px #0ba9ca,
+    0 0 30px #0ba9ca, 0 0 40px #0ba9ca;
+
+}
+.select{
+  
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0ba9ca, 0 0 15px #0ba9ca,
+    0 0 30px #0ba9ca, 0 0 40px #0ba9ca;
+
+  
+}
+&__select{
+    color:gray;
+    padding: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    height: 40px;
+    border: 2px solid rgb(140, 218, 22);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none; 
+}
+&__btn{
+    padding: 5px 10px 5px 10px;
+	color: white;
+    font-size: 16px;
+	background-color: red;
+	border: 0;
+	border-radius: 10px;
+
+    font-family: inherit;
+
+}
+}
+.error{
+    padding-top: 30px;
+    font-size: 36px;
+    color:#0bcaba;
 }

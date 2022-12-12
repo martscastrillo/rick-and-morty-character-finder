@@ -7,7 +7,10 @@
             name: character.name,
             species: character.species,
             image: character.image,
-            id: character.id
+            id: character.id,
+            status:character.status,
+            origin:character.origin,
+            episode:character.episode
           };
         });
         return cleanData;
