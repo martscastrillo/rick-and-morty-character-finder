@@ -1,12 +1,22 @@
 @import './core/Reset';
-.list{
-    flex-direction: row;
+.sectionlist{
+    display: flex;
+    align-items: center;
     justify-content: center;
+}
+.list{
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+
+    ////////////
+    /// //////////
+    grid-template-columns: repeat(5, 1fr);
     gap: 50px;
     text-align: center;
     margin-bottom: 70px;
+    @media all and (max-width: 768px) {
+        display: flex;
+        grid-template-columns: repeat(5, 1fr);
+      }
 
 }
 .error{
@@ -23,12 +33,13 @@ justify-content: center;
     padding-top: 30px;
     font-size: 36px;
     color:#0bcaba;
- 
+    text-shadow: none;
+  
 }
 &__span{
     color: rgb(171, 254, 48);;
    text-transform: uppercase;
-   text-shadow: #a4f59c 1px 0 10px;
-  padding: 0px;
+   text-shadow: #a4f59c 3px 0 10px;
+    padding: 0px;
 }
 }

@@ -12,7 +12,8 @@ import Filters from "./Filters.js";
 function App() {
 	const [characterData, setCharacterData] = useState([]);
 	const [filterByName, setFilterByName] = useState("");
-	const [filterSpecie, setFilterSpecie] = useState('All');
+	const [filterBySpecie, setFilterBySpecie] = useState('All');
+	const [filterByStatus, setFilterByStatus] = useState(false); 
 	useEffect(() => {
 		getDataFromAPI().then((cleanData) => {
 			setCharacterData(cleanData);
@@ -20,34 +21,42 @@ function App() {
 		});
 
 	}, []);
-
 	const handleFilterName = (value) => {
 		setFilterByName(value);
+		ls.set('input', value);
 	};
-
-	const handleFilterSpecie = (value) => {
-		setFilterSpecie(value);
+	const handleFilterBySpecie = (value) => {
+		setFilterBySpecie(value);
+		ls.set('specie', value);
+	};
+	const handleFilterByStatus = (value) => {
+		setFilterByStatus(value);
+	};
+	const handleReset = () => {
+		setCharacterData(...characterData);
+		setFilterByName('');
+		setFilterByStatus(false);
+		setFilterBySpecie('All');
+		ls.remove('specie');
+		ls.remove('input');
 	};
 
 	const filterCharacters = 
 		 characterData
-			.filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase()))/* 
+			.filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase()))
 			.filter((eachCharacter) => {
 				let result = '';
-				 if (filterSpecie === 'All') {
+				 if (filterBySpecie === 'All') {
 					result = true;
 					return result;
-				} else if (filterSpecie === 'Human') {
-					console.log('Human');
+				} else if (eachCharacter.species === filterBySpecie) {
 					result = true;
 					return result;
 				}
-				else if (filterSpecie === 'Alien') {
-					console.log('Alien');
-					
-				}
+				
 				return result;
-			}) */;
+			})
+		/* 	.filter((eachCharacter) => eachCharacter.status.toLowerCase().includes(filterByStatus.toLowerCase())) */ ;
 	
 
 
@@ -62,11 +71,11 @@ function App() {
 				<img className="logo" src={logo} alt="logo" title="rick-and" />
 			</header>
 			<Routes>
-				<Route path='/' element={<div className="main"><Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie} filterSpecie={filterSpecie} />
+				<Route path='/' element={<div className="main"><Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterBySpecie={handleFilterBySpecie} filterBySpecie={filterBySpecie}  handleReset={handleReset} handleFilterByStatus={handleFilterByStatus} filterByStatus={filterByStatus}/>
 					<CharacterList data={filterCharacters}></CharacterList></div>}> </Route>
 				<Route path="/character/:characterId" element={<CharacterDetail findCharacter={findCharacter} />} />
 				<Route path='*' element={<NotFoundPage />} />
-
+				
 			</Routes>
 
 		</div>

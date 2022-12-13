@@ -8,40 +8,86 @@
     display: flex;
     flex-direction: column;
     
-    justify-content: space-around;
+    justify-content: space-between;
+
     width: 275px;
     border-radius: 7px;
+    &:hover {
+        transform: scale(1.05, 1.05);
+        transition: transform 2s;
+      }
+      &:not(:hover) {
+        transition: transform 2s;
+      }
     .textbluebox{
         height: 150px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-
+        align-items: center;
+        &__status{
+            display: flex;
+            align-items: center;
+            gap:10px;
+       
+        }
+        &__species{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         gap:10px;
+       
+        }
+    }
+    .statusspecies-div{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+        justify-content: center;
+        align-items: center;
     }
     &__name{
+     
         border-bottom: 0.5px solid rgb(255, 255, 255); 
-        padding: 10px 30px 5px 30px;
+        padding: 20px 30px 15px 30px;
         color: rgb(255, 255, 255);
-        font-size: 18px;
+        font-size: 14px;
         text-transform: uppercase;
         font-family:$font-main;
     }
+
     &__species{
-        padding: 10px;
+     
+      
+        margin: 0;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        font-weight: 300;
+        align-self: center;
+    }
+    &__status{
+       
+    
         margin: 0;
         font-size: 14px;
         color: rgb(255, 255, 255);
         text-transform: uppercase;
-       
+        font-weight: 300;
         align-self: center;
+      
     
     }
     &__img{
      
         width: 275px;
-       
         object-fit: cover;
     
+    }
+    &__img-species{
+       width:  18px;
+      
     }
     .logobox{
         display: flex;

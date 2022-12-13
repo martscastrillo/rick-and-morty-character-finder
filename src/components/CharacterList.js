@@ -9,7 +9,7 @@ const CharacterList = ({data}) => {
 		  })
 		
 			return (
-				<section>
+				<section className="sectionlist">
 					<ul className="list">{characterElements}</ul>
 				</section>
 			);
