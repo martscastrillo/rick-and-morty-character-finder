@@ -2,7 +2,7 @@
 import { /* Routes, Route, */ Link } from 'react-router-dom';
 import '../styles/CharacterDetail.scss';
 import { useParams } from 'react-router-dom';
-import Alien from "../images/Alien.png";
+import Alien from "../images/alien.png";
 import Dead from "../images/Dead.png";
 import Alive from "../images/Alive.png";
 import Human from "../images/Human.png";

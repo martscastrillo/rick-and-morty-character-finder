@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import "../styles/CharacterCardFromList.scss";
-import Alien from "../images/Alien.png";
+import Alien from "../images/alien.png";
 import Dead from "../images/Dead.png";
 import Alive from "../images/Alive.png";
 import Human from "../images/Human.png";
 import unknown from "../images/unknown.png";
-
 const CharacterCardFromList = ({ character }) => {
 	const checkSpecies = () => {
 		if (character.species === "Human") {

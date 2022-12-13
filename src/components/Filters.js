@@ -9,9 +9,9 @@ const Filters = (props) => {
 	const handleOnChange = (ev) => {
 		props.handleFilterBySpecie(ev.target.value);
 	};
-  const handleOnChangeChecked = (ev) => {
+/*   const handleOnChangeChecked = (ev) => {
 		props.handleFilterByStatus(ev.target.value);
-	};
+	}; */
 	const handleSubmit = (ev) => {
 		ev.preventDefault();
 	};
@@ -44,7 +44,7 @@ const Filters = (props) => {
 				</select>
 			</div>
 		
-			<div className="checkbox">
+			{/* <div className="checkbox">
 				<span className="checkbox__span">
 					<input
 						className="checkbox__span__input"
@@ -82,7 +82,7 @@ const Filters = (props) => {
 					<label htmlFor="status3">Unknown</label>
 				</span>
 				
-			</div>
+			</div> */}
       <button className="formbox__btn" onClick={handleOnClick}>
 				Reset
 			</button>
