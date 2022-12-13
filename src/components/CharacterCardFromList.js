@@ -1,28 +1,30 @@
 import {Link} from 'react-router-dom';
-/* import Alive from "../images/alien.png";
-import Dead from "../images/calavera.png";
-import Unknown from "../images/who.png"; */
+import "../styles/CharacterCardFromList.scss";
+/* import {  useState } from "react"; */
+
 const CharacterCardFromList = ({character}) => {
-/*   let result = '';
+ 
+  /* const [status, setStatus] = useState('');
   const checkStatus = () =>{
 
     if(character.status === 'Alive'){
-      result = {Alive};
+      setStatus("../images/alien.png")
     }
     if(character.status === 'Dead'){
-      result =  {Dead};
+       setStatus('../images/calavera.png')
     }
     if(character.status === 'unknown'){
-       result =  {Unknown};
+      setStatus("../images/who.png")
+      
     }
-    return result;
-  }
-    */
+   
+  } */
+  
 
     return (
     <li className="card" key='character.id'>
-   
-     <Link to={`user/${character.id}`}  >
+    
+     <Link to={`/character/${character.id}`}  >
           <img
             className="card__img"
             src={character.image}
@@ -32,8 +34,8 @@ const CharacterCardFromList = ({character}) => {
           <div className='textbluebox'>
           <h2 className="card__name">{character.name}</h2>
           <h3 className="card__species"> {character.species} </h3>
-          <span className='logobox'>{/* <img className='logostatus' src={Alive} alt="status" />
-          <img className='logostatus' src={Alive} alt="status" /> */}</span>
+          <span className='logobox'>{/* <img className='logostatus' src="" alt=''/>
+          <img className='logostatus' src={status} alt='' /> */}</span>
           </div>
       
     </Link> 

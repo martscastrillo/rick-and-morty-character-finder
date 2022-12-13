@@ -1,0 +1,60 @@
+@import './core/Variables';
+@import './core/Reset';
+.card{
+    background-color: #10aec6;
+    list-style: none;
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
+    0 0 30px #a4f59c, 0 0 40px #a4f59c;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+    width: 275px;
+    border-radius: 7px;
+    .textbluebox{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    }
+    &__name{
+        border-bottom: 0.5px solid rgb(255, 255, 255); 
+        padding: 10px 30px 5px 30px;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        text-transform: uppercase;
+        font-family:$font-main;
+    }
+    &__species{
+        padding: 10px;
+        margin: 0;
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+       
+        align-self: center;
+    
+    }
+    &__img{
+     
+        width: 275px;
+       
+        object-fit: cover;
+    
+    }
+    .logobox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 30px;
+        
+    }
+    .logostatus{
+     
+        width: 20px;
+    }
+}
+

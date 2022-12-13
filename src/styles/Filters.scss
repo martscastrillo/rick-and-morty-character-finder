@@ -1,0 +1,55 @@
+@import './core/Reset';
+.formbox{
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap:30px;
+
+&__input{
+    color:gray;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    height: 40px;
+    font-family: inherit;
+    
+    background-color: #fff;
+    border: 2px solid rgb(140, 218, 22);
+    border-radius: 4px;
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0ba9ca, 0 0 15px #0ba9ca,
+    0 0 30px #0ba9ca, 0 0 40px #0ba9ca;
+
+}
+.select{
+  
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0bca87, 0 0 15px #0bca87,
+    0 0 30px #0bca87, 0 0 40px #0bca87;
+
+  
+}
+&__select{
+    color:rgb(70, 70, 70);
+    padding: 10px;
+    font-family: inherit;
+    height: 40px;
+    background-color:rgb(252, 252, 141) ;
+    border: 2px solid #0ba9ca;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -ms-appearance: none; 
+}
+&__btn{
+    padding: 5px 10px 5px 10px;
+	color: white;
+    font-size: 16px;
+	background-color:  purple;
+	border: 0;
+	border-radius: 10px;
+
+    font-family: inherit;
+
+}
+}

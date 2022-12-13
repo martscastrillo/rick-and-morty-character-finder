@@ -1,5 +1,17 @@
 @import './core/Variables';
 @import './core/Reset';
+.detailSuperbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 300px;
+}
+.link{
+   transform: translate(400px, 170px);
+   color: purple;
+   font-size: 22px;
+}
 .detail{
     margin-top: 200px;
     color: white;

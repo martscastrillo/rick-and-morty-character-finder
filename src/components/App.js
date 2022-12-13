@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import {Routes, Route, matchPath, useLocation} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import getDataFromAPI from "../services/api.js";
 import CharacterList from "./CharacterList";
-import CharacterDetail from './CharacterDetail'
+import CharacterDetail from './CharacterDetail';
+import ls from '../services/localStorage';
+import NotFoundPage from './NotFoundPage';
 import "../styles/App.scss";
 import logo from "../images/Rick_and_Morty_title_card_(cropped).png";
 
@@ -10,58 +12,63 @@ import Filters from "./Filters.js";
 function App() {
 	const [characterData, setCharacterData] = useState([]);
 	const [filterByName, setFilterByName] = useState("");
-
+	const [filterSpecie, setFilterSpecie] = useState('All');
 	useEffect(() => {
 		getDataFromAPI().then((cleanData) => {
 			setCharacterData(cleanData);
+			ls.set('data', cleanData);
 		});
+
 	}, []);
 
 	const handleFilterName = (value) => {
 		setFilterByName(value);
 	};
 
-	const filterCharacters = () => {
-		return characterData.filter((eachCharacter) =>
-			eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase())
-		);
+	const handleFilterSpecie = (value) => {
+		setFilterSpecie(value);
 	};
-	const notFound = () => {
-		const notFound = characterData.filter(
-			(eachCharacter) =>
-				!eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase())
-		);
-		if (notFound) {
-			return (
-				<p className="error">
-					{" "}
-					No hemos encontrado lo que buscas, prueba otra vez
-				</p>
-			);
-		}
+
+	const filterCharacters = 
+		 characterData
+			.filter((eachCharacter) => eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase()))/* 
+			.filter((eachCharacter) => {
+				let result = '';
+				 if (filterSpecie === 'All') {
+					result = true;
+					return result;
+				} else if (filterSpecie === 'Human') {
+					console.log('Human');
+					result = true;
+					return result;
+				}
+				else if (filterSpecie === 'Alien') {
+					console.log('Alien');
+					
+				}
+				return result;
+			}) */;
+	
+
+
+	const findCharacter = (id) => {
+		return characterData.find((character) => character.id === parseInt(id));
 	};
-  const findCharacter = (id) => {
-    return characterData. find((character) => character.id === id);
-    };
+
+
 	return (
 		<div>
 			<header className="header">
-				<img className="logo" src={logo} alt="" />
+				<img className="logo" src={logo} alt="logo" title="rick-and" />
 			</header>
-      <Routes>
-        <Route path='/' >
-        </Route>
-        <Route path="/user/:characterId"  element={<CharacterDetail findCharacter={findCharacter} />}/>
-      
-     
-      </Routes>
-      <div className="main">
-          <Filters
-            handleFilterName={handleFilterName}
-            filterByName={filterByName}
-          />
-          <CharacterList data={filterCharacters() || notFound()}></CharacterList>
-        </div>
+			<Routes>
+				<Route path='/' element={<div className="main"><Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie} filterSpecie={filterSpecie} />
+					<CharacterList data={filterCharacters}></CharacterList></div>}> </Route>
+				<Route path="/character/:characterId" element={<CharacterDetail findCharacter={findCharacter} />} />
+				<Route path='*' element={<NotFoundPage />} />
+
+			</Routes>
+
 		</div>
 	);
 }

@@ -9,12 +9,12 @@
             image: character.image,
             id: character.id,
             status:character.status,
-            origin:character.origin,
+            origin:character.origin.name,
             episode:character.episode
           };
         });
+        cleanData.sort((x, y) => x.name.localeCompare(y.name));
         return cleanData;
-   
       });
   };
   export default getDataFromAPI;
