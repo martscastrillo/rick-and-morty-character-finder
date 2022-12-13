@@ -2,7 +2,7 @@
 import { /* Routes, Route, */ Link } from 'react-router-dom';
 import '../styles/CharacterDetail.scss';
 import { useParams } from 'react-router-dom';
-import Alien from "../images/Alien.png";
+import Alien from "../images/alien.png";
 import Dead from "../images/Dead.png";
 import Alive from "../images/Alive.png";
 import Human from "../images/Human.png";
@@ -14,18 +14,18 @@ const CharacterCardFromList = (props) => {
   const characterFound = props.findCharacter(params.characterId);
   const checkSpecies = () => {
 		if (characterFound.species === "Human") {
-			return (<img src={Human} alt="human" title={`Icon de ${characterFound.species}`}  className="card__img-species" />);
+			return (<img src={Human} alt="human" title={`${characterFound.species} icon`}  className="card__img-species" />);
 		}
 		if (characterFound.species === "Alien") {
-			return (<img src={Alien} alt="alien" title={`Icon de ${characterFound.species}`}  className="card__img-species" />);
+			return (<img src={Alien} alt="alien" title={`${characterFound.species} icon`}   className="card__img-species" />);
 		}
 	};
 	const checkStatus = () => {
 		if (characterFound.status === "Alive") {
-			return (<img src={Alive} alt="alive" title={`Icon de ${characterFound.status}`}  className="card__img-species" />);
+			return (<img src={Alive} alt="alive" title={`${characterFound.status} icon`}  className="card__img-species" />);
 		}
 		if (characterFound.status === "Dead") {
-			return (<img src={Dead} alt="dead" title={`Icon de ${characterFound.status}`}  className="card__img-species" />);
+			return (<img src={Dead} alt="dead" title={`${characterFound.status} icon`}  className="card__img-species" />);
 		}
 
 		if (characterFound.status === "unknown") {
@@ -38,7 +38,7 @@ const CharacterCardFromList = (props) => {
     if(characterFound !== undefined){
     return (
     <li  className='detailSuperbox'>
-        <Link to='/' className='link'> <i className="fa-solid fa-chevron-left"></i>Volver</Link>
+        <Link to='/' className='link'> <i className="fa-solid fa-chevron-left"></i>Return</Link>
         <div className='detail'>
             <img
             className="detail__image"
