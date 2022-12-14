@@ -8,22 +8,56 @@ import unknown from "../images/unknown.png";
 const CharacterCardFromList = ({ character }) => {
 	const checkSpecies = () => {
 		if (character.species === "Human") {
-			return (<img src={Human} alt="human" title={`${character.species} icon`} className="card__img-species" />);
+			return (
+				<img
+					src={Human}
+					alt="human"
+					title={`${character.species} icon`}
+					className="card__img-species"
+				/>
+			);
 		}
 		if (character.species === "Alien") {
-			return (<img src={Alien} alt="alien" title={`${character.species} icon`} className="card__img-species" />);
+			return (
+				<img
+					src={Alien}
+					alt="alien"
+					title={`${character.species} icon`}
+					className="card__img-species"
+				/>
+			);
 		}
 	};
 	const checkStatus = () => {
 		if (character.status === "Alive") {
-			return (<img src={Alive} alt="alive" title={`${character.status} icon`} className="card__img-species" />);
+			return (
+				<img
+					src={Alive}
+					alt="alive"
+					title={`${character.status} icon`}
+					className="card__img-species"
+				/>
+			);
 		}
 		if (character.status === "Dead") {
-			return (<img src={Dead} alt="dead" title={`${character.status} icon`} className="card__img-species" />);
+			return (
+				<img
+					src={Dead}
+					alt="dead"
+					title={`${character.status} icon`}
+					className="card__img-species"
+				/>
+			);
 		}
 
 		if (character.status === "unknown") {
-			return (<img src={unknown} alt="unknown" title={`${character.status} icon`} className="card__img-species" />
+			return (
+				<img
+					src={unknown}
+					alt="unknown"
+					title={`${character.status} icon`}
+					className="card__img-species"
+				/>
 			);
 		}
 	};
@@ -45,7 +79,9 @@ const CharacterCardFromList = ({ character }) => {
 							{checkSpecies()}
 						</span>
 						<span className="textbluebox__status">
-          	<h3 className="card__status"> {character.status}</h3>{checkStatus()} </span>
+							<h3 className="card__status"> {character.status}</h3>
+							{checkStatus()}{" "}
+						</span>
 					</div>
 				</div>
 			</Link>

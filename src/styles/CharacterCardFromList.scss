@@ -1,106 +1,89 @@
-@import './core/Variables';
-@import './core/Reset';
-.card{
-    background-color: #10aec6;
-    list-style: none;
-    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
-    0 0 30px #a4f59c, 0 0 40px #a4f59c;
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: space-between;
+@import "./core/Variables";
+@import "./core/Reset";
+.card {
+	background-color: #10aec6;
+	list-style: none;
+	box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
+		0 0 30px #a4f59c, 0 0 40px #a4f59c;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 275px;
+	border-radius: 7px;
+	&:hover {
+		transform: scale(1.05, 1.05);
+		transition: transform 2s;
+	}
+	&:not(:hover) {
+		transition: transform 2s;
+	}
+	.textbluebox {
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		&__status {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		&__species {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+		}
+	}
+	.statusspecies-div {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		justify-content: center;
+		align-items: center;
+	}
+	&__name {
+		border-bottom: 0.5px solid rgb(255, 255, 255);
+		padding: 20px 30px 15px 30px;
+		color: rgb(255, 255, 255);
+		font-size: 14px;
+		text-transform: uppercase;
+		font-family: $font-main;
+	}
 
-    width: 275px;
-    border-radius: 7px;
-    &:hover {
-        transform: scale(1.05, 1.05);
-        transition: transform 2s;
-      }
-      &:not(:hover) {
-        transition: transform 2s;
-      }
-    .textbluebox{
-        height: 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        &__status{
-            display: flex;
-            align-items: center;
-            gap:10px;
-       
-        }
-        &__species{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-         gap:10px;
-       
-        }
-    }
-    .statusspecies-div{
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        gap:15px;
-        justify-content: center;
-        align-items: center;
-    }
-    &__name{
-     
-        border-bottom: 0.5px solid rgb(255, 255, 255); 
-        padding: 20px 30px 15px 30px;
-        color: rgb(255, 255, 255);
-        font-size: 14px;
-        text-transform: uppercase;
-        font-family:$font-main;
-    }
-
-    &__species{
-     
-      
-        margin: 0;
-        font-size: 16px;
-        color: rgb(255, 255, 255);
-        text-transform: uppercase;
-        font-weight: 300;
-        align-self: center;
-    }
-    &__status{
-       
-    
-        margin: 0;
-        font-size: 14px;
-        color: rgb(255, 255, 255);
-        text-transform: uppercase;
-        font-weight: 300;
-        align-self: center;
-      
-    
-    }
-    &__img{
-     
-        width: 275px;
-        object-fit: cover;
-    
-    }
-    &__img-species{
-       width:  18px;
-      
-    }
-    .logobox{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-left: 10px;
-        margin-right: 10px;
-        gap: 30px;
-        
-    }
-    .logostatus{
-     
-        width: 20px;
-    }
+	&__species {
+		margin: 0;
+		font-size: 16px;
+		color: rgb(255, 255, 255);
+		text-transform: uppercase;
+		font-weight: 300;
+		align-self: center;
+	}
+	&__status {
+		margin: 0;
+		font-size: 14px;
+		color: rgb(255, 255, 255);
+		text-transform: uppercase;
+		font-weight: 300;
+		align-self: center;
+	}
+	&__img {
+		width: 275px;
+		object-fit: cover;
+	}
+	&__img-species {
+		width: 18px;
+	}
+	.logobox {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 10px;
+		margin-right: 10px;
+		gap: 30px;
+	}
+	.logostatus {
+		width: 20px;
+	}
 }
-

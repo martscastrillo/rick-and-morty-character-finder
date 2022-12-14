@@ -6,7 +6,7 @@ import Dead from "../images/Dead.png";
 import Alive from "../images/Alive.png";
 import Human from "../images/Human.png";
 import unknown from "../images/unknown.png";
-import NotFoundPage from './NotFoundPage';
+import NotFoundPage from "./NotFoundPage";
 const CharacterDetail = (props) => {
 	const params = useParams();
 
@@ -66,7 +66,6 @@ const CharacterDetail = (props) => {
 			);
 		}
 	};
- 
 
 	if (characterFound !== undefined) {
 		return (
@@ -99,14 +98,17 @@ const CharacterDetail = (props) => {
 							{checkSpecies()}
 						</h3>
 						<h3 className="detail__episodes">
-							Episodes: <span className="detailspan">{characterFound.episode.length}</span>
+							Episodes:{" "}
+							<span className="detailspan">
+								{characterFound.episode.length}
+							</span>
 						</h3>
 					</div>
 				</div>
 			</li>
 		);
 	} else {
-    return <NotFoundPage />;
+		return <NotFoundPage />;
 	}
 };
 export default CharacterDetail;

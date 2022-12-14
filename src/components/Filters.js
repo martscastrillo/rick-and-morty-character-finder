@@ -30,7 +30,7 @@ const Filters = (props) => {
 						className="checkbox__span__input"
 						type="checkbox"
 						id={oneStatus}
-						name='origin'
+						name="origin"
 						value={oneStatus}
 						onChange={handleOnChangeChecked}
 						checked={props.filterByStatus.includes(oneStatus)}
