@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.7c6e23ef.css",
-    "main.js": "./static/js/main.6383e86c.js",
+    "main.css": "./static/css/main.c0b5edfb.css",
+    "main.js": "./static/js/main.c3f0ad50.js",
     "static/media/Rick_and_Morty_title_card_(cropped).png": "./static/media/Rick_and_Morty_title_card_(cropped).493c043a1a93f498515f.png",
     "static/media/Dead.png": "./static/media/Dead.f068b2c220628b00034a.png",
     "static/media/Alive.png": "./static/media/Alive.5443119d4d2be364030f.png",
@@ -9,11 +9,11 @@
     "static/media/unknown.png": "./static/media/unknown.19c328bdf165ed9f60e7.png",
     "static/media/Human.png": "./static/media/Human.94afa70529d3643338db.png",
     "index.html": "./index.html",
-    "main.7c6e23ef.css.map": "./static/css/main.7c6e23ef.css.map",
-    "main.6383e86c.js.map": "./static/js/main.6383e86c.js.map"
+    "main.c0b5edfb.css.map": "./static/css/main.c0b5edfb.css.map",
+    "main.c3f0ad50.js.map": "./static/js/main.c3f0ad50.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c6e23ef.css",
-    "static/js/main.6383e86c.js"
+    "static/css/main.c0b5edfb.css",
+    "static/js/main.c3f0ad50.js"
   ]
 }
