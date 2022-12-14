@@ -15,14 +15,14 @@ function App() {
 	const [filterByStatus, setFilterByStatus] = useState([]);
 	useEffect(() => {
 		const localStorage = ls.get("data");
-	/* 	if (localStorage === null) { */
+		if (localStorage === null) {
 			getDataFromAPI().then((cleanData) => {
 				setCharacterData(cleanData);
 				ls.set("data", cleanData);
 			});
-	/* 	} else {
+		} else {
 			setCharacterData(localStorage);
-		} */
+		}
 	}, []);
 
 	const handleFilterName = (value) => {
