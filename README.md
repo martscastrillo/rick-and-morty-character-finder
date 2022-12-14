@@ -1,8 +1,11 @@
 # Rick and Morty Characters Info
 
-Este es un proyecto realizado para una evaluación en el módulo 3. Javascript dentro del Bootcamp de Adalab.
+![Rick-Morty-Sexta-Temporada](https://user-images.githubusercontent.com/112553001/207452667-e69eeb74-3d1c-475e-b676-9bf14387baf4.jpg)
 
-Está dentro de una estructura de carpetas preparada para poder funcionar, los archivos editables se encuentran dentro de la carpeta `src/`: son los ficheros de nuestra página web, como HTML, CSS, JS...
+
+Este es un proyecto realizado para una evaluación en el módulo 3. React dentro del Bootcamp de Programación Web de Adalab.
+
+Está dentro de una estructura de carpetas preparada para poder funcionar, los archivos editables se encuentran dentro de la carpeta `src/`: son los ficheros de nuestra página web, como HTML, SCSS, JS...
 
 > **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/)
 
@@ -20,53 +23,70 @@ Con este comando se podrá abrir la web del mismo modo que lo haría el Live Ser
 
 ## Finalidad del proyecto
 
-El proyecto es un buscador de personajes de la serie Breaking Bad, está preparado para buscar mediante la barra de búsqueda, para de ese modo filtrar, después de haber filtrado el personaje que buscas puedes hacer click sobre el y se almacenará en el listado de favoritos, si haces click en él de nuevo lo eliminarás de la lista de favoritos.
+El proyecto es un buscador de personajes de la serie Rick y Morty, está preparado para buscar mediante la barra de búsqueda, para de ese modo filtrar, después de haber filtrado (o antes si lo que quieres es tirar de scroll) el personaje que buscas puedes hacer click sobre él aparecerá enrutada una tarjeta de detalle del personaje en concreto, donde se incluirán mas detalles que los que aparecían en la tarjeta de presentación en conjunto de la primera página. La página detalle tiene un enrutado en el que podemos volver a la página de inicio.
 
-Las búsquedas que puedes realizar pueden ser por nombre, buscando, por ejemplo todos los walter, Walter o WALTER que quieras (si, si, está preparado para que escribas cómo lo escribas, si el nombre está escrito correctamente, te lo localizamos) de ese modo te localiza todos los Walter que haya en la serie, en este caso, padre e hijo, pero si deseas afinar más tu búsqueda en el select siguiente puedes elegir el estado en el que se encuentran, vivo, muerto, o "no me queda del todo claro" como ocurre con Walter White. También puedes filtrar únicamente por el estado de los personajes, para que puedas comprobar de un vistazo, quien está en este barrio, y quién ha pasado a mejor vida. ¡¡SENTIMOS LOS SPOILERS!!
+Las búsquedas que puedes realizar pueden ser por nombre, buscando, por ejemplo todos los Rick, rick o RICK que quieras (ooooooooh si, este filtro está a prueba de bombas, para que escribas cómo lo escribas, si el nombre está escrito correctamente, te lo localizamos) de ese modo te localiza todos los Ricks que haya en la serie, en este caso, los humanos y los aliens, pero si deseas afinar más tu búsqueda en el select siguiente puedes elegir la especie a la que pertenecen, si son humanos o bien aliens para que puedas comprobar de un vistazo, qué en es quién en el universo de Rick y Morty.
 
-Puedes añadir todos los favoritos que quieras, y tantas veces como quieras, así como eliminarlos, bien pulsando sobre si mismo, en la sección de la derecha, mientras estás añadiendo personajes nuevos o bien cuando ya estás repasando todos tus favoritos y quieres explulsar a alguno de allí, podrás hacerlo pulsando en el aspa de la esquina superior derecha de la tarjeta. ¡Peeeeeero un momento! Para hacer tu vida más sencilla a la hora de eliminar los favoritos hemos incorporado un botón de RESET donde se borran todos los favoritos que tienes en tu listado. incluso la búsqueda que hayas escrito. ¡Fácil!
+Si por lo que sea no te acuerdas como se llama el personaje o bien decides inventartelo y no lo encuentra en este listado, te va a saltar un mensajito.
 
 ## ¿Cúal ha sido el enfoque?
 
-El proyecto es una web donde mediante una peticion a un servidor obtenemos la informacion de los personajes de la serie Breaking Bad, el servidor nos ofrece multiples datos demiante arrays de objetos, con un personaje por objeto, de ahí tomamos los datos que nos interesan, en nuestro caso name, status e img.
+El proyecto es una web donde mediante una peticion a un servidor obtenemos la informacion de los personajes de la serie Rick y Morty, el servidor nos ofrece multiples datos mediante un objeto con dos propiedades, la que nos interesa que es results, un arrays de objetos, con un personaje por objeto, de ahí tomamos los datos que nos interesan, haciendo una limpieza en el momento de traernos los datos de la api.
 
-El proyecto gira en torno a dos arrays que van situados en dos listas, la lista de todos los personajes, y la lista de favoritos, de ese modo, a lo largo de todo el proyeto, mediante funciones, métodos funcionales de arrats, condicionales y bucles hacemos que funcione lo que necesitamos.
+Cada uno de los componentes tiene importada su propia hoja de estilos propia de Scss, ya que así es como mejor trabaja React. La nomenclatura de los archivos es equivalente para cada componente de Javascript junto con su archivo de Scss.
 
-El proyecto está preparado para ser eficiente con las interacciones de JS y con un mínimo de CSS, ya que en este caso no es lo importante para demostrar los conocimientos.
+El proyecto está preparado para ser eficiente con las interacciones de JS mediante React y con un mínimo de SCSS, ya que en este caso no es lo importante para demostrar los conocimientos.
 
 Tenemos el buscador que localiza los personajes por nombre, bien se escriba en mayúsculas o bien en minúsculas, si el nombre está escrito de manera correcta, lo localiza, incluso una parte de él, no es necesario escribirlo entero.
 
-Otro método alternativo de búsqueda es el select, donde se filtra el estado con las opciones posibles del personaje. Este método alternativo de búsqueda es combinable con el método de input, de búsqueda por nombre.
+Otro método alternativo de búsqueda es el select, donde se filtra la especie con las opciones posibles del personaje. Este método alternativo de búsqueda es combinable con el método de input, de búsqueda por nombre.
 
-El proyecto está preparado para poder trabajar con archivos de JS en partials, los lee en orden alfanumérico, y eso se ha tenido en cuenta a la hora de repartir el código en los distintos archivos, la división es la siguiente:
+El proyecto tiene una estructura de componentes mediante React, este es el listado de los componentes:
 
-- **00_main.js**
-  Aquí se encuentran nuestra variables globales, tanto los <strong>document.querySelector</strong> con los elementos que nos traemos de HTML como los arrays en torno a los que se mueve el proyecto entero.
-- **00_renderCharacters.js**
-  Encontramos cuatro funciones:
+- **App.js**
+Este es el componente que maneja toda la aplicación. Aquí se crea la estructura de html que recibe en el body. Aquí encontramos las variables de        estado relacionadas con los datos que necesita la página para funcionar: la variable donde se guardan los datos para pintar todas las tatjetas de los personajes así como las variables que guardan los filtros de búsqueda.
+Encontramos tambien el hook useEffect que es lo que necesitamos para que carguen los datos de la api cuando carga la página.
+Tambíen están las funciones que recojen los datos y los envian a la función que ejecuta finalmente los eventos en los componentes hijas.
+  
+  ------------------------------
 
-  - <strong>handleClick </strong> La función del evento click que tiene aplicada cada tarjeta. Aplica según un toggle a la tarjeta con la clase selected. Buscamos en el array el objeto que tenga el mismo char_id que el objeto sobre el que se ha hecho click(event.currentTarget.id) por otro lado buscamos la posición en favoritos si es que se encuentra Si lo encuentra, debe elminarlo del listado de favoritos. Rellena el localStorage con el de favoritos en según las modificaciones y también pinta de nuevo todos los favoritos con estos cambios.
+  - <strong>handleFilterName </strong> 
 
-  - <strong>renderOneCharacter</strong> Es la función que crea la estructura de html con la que vamos a hidratar posteriormente la página, con un condicionante que afecta, si no hay favoritos no hace nada, pero si si que los hay, añade la clase selected
-  - <strong>addCharacterListeners </strong> En esta función tenemos la creación de una variable de JS de un elemento de html que nos da un array, y un bucle que recorre ese array aplicando a todo él un evento click.
-  - <strong>renderAllCharacters</strong>La última función pinta nuestro contenido del array de <strong>AllCharacters</strong> en html.
-    Por último la ejecución de la función <strong>addCharacterListeners</strong>
+  - <strong>handleFilterBySpecie</strong> 
+  ------------------------------
 
-- **01_fetch.js**
-  En este archivo encontramos la petición al servidor, donde traemos los datos que necesitamos desde la API hasta nuestro array <strong>AllCharacters</strong>.
-- **02_addFavorites.js**
-  Encontramos tres funciones, la primera la función que pinta nuestro contenido de html en el array de favoritos con la estructura de html, además de crear la variable con el contenido <strong>querySelector</strong>, para poder hacer un bulcle y aplicarles a todos los elementos del array el listener de ese evento.
-  Segunda función que nos encontramos es <strong>renderFAVCharacter</strong> que es muy similar a la anterior <strong>renderOneCharacter</strong> pero simplificada, porque no necesitamos muchas de las cosas, y además esta estructura nos interesa por tener ya incluida la X con la que vamos a trabajar.
-  Por último tenemos la función del evento que anteriormente hemos declarado en la X, a este evento se le pide que localice el índice de nuestro current id, que lo elimine del array y lo vuelva a pintar, que machaque encima del localStorage con la información nueva que tiene nuestro array de favoritos. Por último para finalizar localizamos el id de la tarjeta que vamos a borrar, que será el mismo id que el de la tarjeta que queremos quitar la clase seleccionada, y sobre ambas (aunque solo lo podremos ver en el array de <strong>AllCharacters</strong>) nos quita la clase selected.
-- **03_search.js**
-  Encontramos dos eventos en este archivo, por un lado, el primero asociado a todo el formulario, para evitar que se reinicie la pagina cuando enviamos con el <strong>event.preventDefault()</strong>
-  Por otro lado el verdadero evento interesante, como input es case sensitive, buscamos que nos iguale lo que buscamos y lo que encontramos a minúsicula con <strong>toLowerCase()</strong>.
-  Tenemos tres condicionantes para las búsquedas:
-  1.  Cuando nos indica una búsqueda en el campo de texto y en la opción del select es una opción distinta a todos, para poder buscar por nombre y estado.
-  2.  Cuando nos indican una busqueda en el campo de texto, de manera que busca los nombres que coincidan para poder buscar por nombre únicamente, en la opción de select ALL.
-  3.  Cuando nos indica una opción de estado únicamente, para poder ver de ese modo, todos los personajes, los muertos, los vivos, etc.
-      En cualquiera de las tres opciones, finaliza pintando en el array <strong>AllCharacters</strong> lo que encuentra en la búsqueda, distinta en cada caso, aunque la función que pinta es la misma, pero con qué lo rellena.
-- **04_localStorage.js**
-  Se genera dónde y qué vamos a guardar en localStorage, guardaremos en <strong>favoriteCharacter</strong> nuestra lista de favoritos dentro de la variable <strong>savedFavorites</strong>, le indicamos que pinte en localStorage lo que se encuentra en nuestro array de favoritos <strong>favoritesCharacters</strong>
-- **05_resetBtn.js**
-  Por último, tenemos el evento click del botón reset, donde se vacía el array de favoritos <strong>favoritesCharacters</strong> así como el contenido de html del mismo, también se hace un reseteo del <strong>localStorage</strong> y del value de nuestro input de búsqueda.
+  
+  - <strong>handleFilterByStatus </strong> En esta función tenemos la creación de una variable de JS de un elemento de html que nos da un array, y un bucle que recorre ese array aplicando a todo él un evento click.
+  
+ ------------------------------
+
+  - <strong>filterCharacters</strong> 
+  
+   - <strong>findCharacter</strong>
+   
+   ------------------------------
+
+   
+   - <strong>handleReset</strong> se actualiza la variable de estado <strong>characterData</strong>  se vacía las variables de estado de los filtros también se hace un reseteo del <strong>localStorage</strong> y del value de nuestro input de búsqueda.
+
+   - <strong>return</strong> donde tenemos todo lo que devuelve este componente principal y aparece en el DOM. aquí mostrará siempre el contenido de la etiqueta header y según el camino que tome la ruta, estaremos en la Home, o bien en las páginas detalle de los personajes o bien si no encuentra una url válida, mostrará una página de error
+
+------------------------------
+
+- **CharacterCardFromList.js**
+- **CharacterDetail.js**
+- **CharacterList.js**
+- **Filters.js**
+- **NotFoundPage.js**
+
+------------------------------
+
+- **services/api.js** En este archivo encontramos la petición al servidor, donde traemos los datos que necesitamos desde la API hasta nuestra variable de estado, y lo guardamos en el localstorage. https://rickandmortyapi.com
+  
+- **services/localStorage.js** Es una plantilla super válida y valiosa para la gestión de local storage, tieniendo incluidas las funciones set, get, clean y remove, que crean dan, limpian y borran lo guardado en el local storage dependiendo de qué necesitemos en cada momento.
+  
+Esto es todo, espero que disfutes del proyecto y si tienes cualquier sugerencia no dudes en comentarmela :smile:
+
+  ![rick-morty-1941429](https://user-images.githubusercontent.com/112553001/207454118-bd42eec2-3104-4b51-a935-533861173d2c.jpg)
+  
+  ## Uncertainty is inherently unsustainable. Eventually, everything either is or isn’t.
