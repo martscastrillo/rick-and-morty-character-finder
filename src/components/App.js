@@ -14,15 +14,15 @@ function App() {
 	const [filterBySpecie, setFilterBySpecie] = useState("All");
 	const [filterByStatus, setFilterByStatus] = useState([]);
 	useEffect(() => {
-	/* 	const localStorage = ls.get("data");
-		if (localStorage === null) { */
-			getDataFromAPI().then((cleanData) => {
-				setCharacterData(cleanData);
-				ls.set("data", cleanData);
-			});
-		/* } else {
+			const localStorage = ls.get("data");
+		if (localStorage === null) {
+		getDataFromAPI().then((cleanData) => {
+			setCharacterData(cleanData);
+			ls.set("data", cleanData);
+		});
+		} else {
 			setCharacterData(localStorage);
-		} */
+		}
 	}, []);
 
 	const handleFilterName = (value) => {
@@ -103,7 +103,6 @@ function App() {
 						</div>
 					}
 				>
-					{" "}
 				</Route>
 				<Route
 					path="/character/:characterId"
