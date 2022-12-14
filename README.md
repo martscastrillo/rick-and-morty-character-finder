@@ -114,4 +114,4 @@ Esto es todo, espero que disfutes del proyecto y si tienes cualquier sugerencia 
 
 ![rick-morty-1941429](https://user-images.githubusercontent.com/112553001/207454118-bd42eec2-3104-4b51-a935-533861173d2c.jpg)
 
-#### ___Uncertainty is inherently unsustainable. Eventually, everything either is or isn’t.___ -  Rick Sanchez
+## Uncertainty is inherently unsustainable. Eventually, everything either is or isn’t.
