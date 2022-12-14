@@ -13,10 +13,10 @@
     gap: 50px;
     text-align: center;
     margin-bottom: 70px;
-    @media all and (max-width: 768px) {
-        display: flex;
+    /* @media all and (max-width: 768px) {
+        display: grid;
         grid-template-columns: repeat(5, 1fr);
-      }
+      } */
 
 }
 .error{

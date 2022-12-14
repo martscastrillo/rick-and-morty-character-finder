@@ -1,7 +1,5 @@
 import "../styles/Filters.scss";
 
-
-
 const Filters = (props) => {
 	const handleInput = (ev) => {
 		props.handleFilterName(ev.target.value);
@@ -9,18 +7,46 @@ const Filters = (props) => {
 	const handleOnChange = (ev) => {
 		props.handleFilterBySpecie(ev.target.value);
 	};
-  const handleOnChangeChecked = (ev) => {
+	const handleOnChangeChecked = (ev) => {
 		props.handleFilterByStatus(ev.target.value);
 	};
+
 	const handleSubmit = (ev) => {
 		ev.preventDefault();
 	};
 	const handleOnClick = (ev) => {
-		props.handleFilterBySpecie("All");
+		props.handleFilterBySpecie('All');
 		props.handleFilterName("");
-    props.handleFilterByStatus(ev.target.value);
+		props.handleFilterByStatus(ev.target.value);
 		return "All";
 	};
+	const renderStatus = () =>{
+		const characterStatus = props.characterData.map((eachCharacter) => {
+			return eachCharacter.status;
+		  });
+	  
+		  const newSet = new Set(characterStatus);
+		  const oneStatus = [...newSet];
+
+		return oneStatus.map((oneStatus, index) => {
+			return (
+				<span className="checkbox__span" key={index}>
+					<input
+						className="checkbox__span__input"
+						type="checkbox"
+						id={oneStatus}
+						name={oneStatus}
+						value={oneStatus}
+						onChange={handleOnChangeChecked}
+						checked={props.filterByStatus.includes(oneStatus)}
+					/>
+					<label htmlFor={oneStatus}>{oneStatus}</label>
+				</span>
+			);
+		})
+	}
+	
+
 	return (
 		<form className="formbox" onSubmit={handleSubmit}>
 			<input
@@ -37,53 +63,16 @@ const Filters = (props) => {
 					id="status"
 					checked={props.filterBySpecie}
 					onChange={handleOnChange}
+					value={props.filterBySpecie}
 				>
 					<option value="All">All</option>
 					<option value="Human">Human</option>
 					<option value="Alien">Alien</option>
 				</select>
 			</div>
-		
-			<div className="checkbox">
-				<span className="checkbox__span">
-					<input
-						className="checkbox__span__input"
-						type="checkbox"
-						id="status1"
-						name="status1"
-						value="Alive"
-            onChange={handleOnChangeChecked}
-            checked={props.filterByStatus}
-					/>
-					<label htmlFor="status1">Alive</label>
-				</span>
-        <span className="checkbox__span">
-					<input
-						className="checkbox__span__input"
-						type="checkbox"
-						id="status2"
-						name="status2"
-						value="Dead"
-            onChange={handleOnChangeChecked}
-            checked={props.filterByStatus}
-					/>
-					<label htmlFor="status2">Dead</label>
-				</span>
-        <span className="checkbox__span">
-					<input
-						className="checkbox__span__input"
-						type="checkbox"
-						id="status3"
-						name="status3"
-						value="Alive"
-            onChange={handleOnChangeChecked}
-            checked={props.filterByStatus}
-					/>
-					<label htmlFor="status3">Unknown</label>
-				</span>
-				
-			</div>
-      <button className="formbox__btn" onClick={handleOnClick}>
+
+			<div className="checkbox">{renderStatus()}</div>
+			<button className="formbox__btn" onClick={handleOnClick}>
 				Reset
 			</button>
 		</form>

@@ -53,9 +53,9 @@
     font-family: inherit;
     box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px rgb(255, 143, 255), 0 0 15px rgb(255, 143, 255),
     0 0 30px rgb(255, 143, 255), 0 0 40px rgb(255, 143, 255);
-    @media all and (max-width: 768px) {
+ /*    @media all and (max-width: 768px) {
         transform: translateX(420px);
-      }
+      } */
       &:hover {
         transform: scale(1.05, 1.05);
         transition: transform 2s;

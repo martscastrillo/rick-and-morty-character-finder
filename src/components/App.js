@@ -7,13 +7,12 @@ import ls from '../services/localStorage';
 import NotFoundPage from './NotFoundPage';
 import "../styles/App.scss";
 import logo from "../images/Rick_and_Morty_title_card_(cropped).png";
-
 import Filters from "./Filters.js";
 function App() {
 	const [characterData, setCharacterData] = useState([]);
 	const [filterByName, setFilterByName] = useState("");
 	const [filterBySpecie, setFilterBySpecie] = useState('All');
-	const [filterByStatus, setFilterByStatus] = useState(false); 
+	const [filterByStatus, setFilterByStatus] = useState([]); 
 	useEffect(() => {
 		getDataFromAPI().then((cleanData) => {
 			setCharacterData(cleanData);
@@ -21,6 +20,7 @@ function App() {
 		});
 
 	}, []);
+
 	const handleFilterName = (value) => {
 		setFilterByName(value);
 		ls.set('input', value);
@@ -31,11 +31,12 @@ function App() {
 	};
 	const handleFilterByStatus = (value) => {
 		setFilterByStatus(value);
+		ls.set('status', value);
 	};
 	const handleReset = () => {
 		setCharacterData(...characterData);
 		setFilterByName('');
-		setFilterByStatus(false);
+		setFilterByStatus([]);
 		setFilterBySpecie('All');
 		ls.remove('specie');
 		ls.remove('input');
@@ -56,7 +57,17 @@ function App() {
 				
 				return result;
 			})
-		/* 	.filter((eachCharacter) => eachCharacter.status.toLowerCase().includes(filterByStatus.toLowerCase())) */ ;
+		 	.filter((eachCharacter) =>  {
+				let result = '';
+				if (filterByStatus.length === 0) {
+					result = true;
+					return result;
+				  } if (filterByStatus.includes(eachCharacter.status)  ){
+					result = true;
+					return result;
+				  }
+				  return result;
+			})  ;
 	
 
 
@@ -71,7 +82,7 @@ function App() {
 				<img className="logo" src={logo} alt="logo" title="rick-and" />
 			</header>
 			<Routes>
-				<Route path='/' element={<div className="main"><Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterBySpecie={handleFilterBySpecie} filterBySpecie={filterBySpecie}  handleReset={handleReset} handleFilterByStatus={handleFilterByStatus} filterByStatus={filterByStatus}/>
+				<Route path='/' element={<div className="main"><Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterBySpecie={handleFilterBySpecie} filterBySpecie={filterBySpecie}  handleReset={handleReset} handleFilterByStatus={handleFilterByStatus} filterByStatus={filterByStatus} characterData={characterData}/>
 					<CharacterList data={filterCharacters}></CharacterList></div>}> </Route>
 				<Route path="/character/:characterId" element={<CharacterDetail findCharacter={findCharacter} />} />
 				<Route path='*' element={<NotFoundPage />} />

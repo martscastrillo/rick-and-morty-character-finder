@@ -8,35 +8,40 @@
     margin-bottom: 300px;
 }
 .link{
-   transform: translate(300px, 50px);
+  transform: translate(400px, 170px);
    color: purple;
    font-size: 22px;
-   @media all and (max-width: 768px) {
+   &:hover {
+    color: white;
+    text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px purple, 0 0 15px purple,
+    0 0 10px purple, 0 0 20px purple;
+  }
+  /*  @media all and (max-width: 768px) {
     transform: translate(400px, 170px);
-   }
+   } */
 }
 .detail{
-    margin-top: 80px;
+  margin-top: 200px;
     color: white;
     background-color: #1a5b35;
     border-radius: 6px;
-    width: 700px;
-    height: 400px;
+    width: 900px;
+    height: 500px;
    display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 40px;
-  gap: 40px;
+  padding-left: 90px;
+  gap: 50px;
   font-family: $font-main;
   box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
   0 0 30px #a4f59c, 0 0 40px #a4f59c;
-  @media all and (max-width: 768px) {
-    margin-top: 200px;
-    width: 900px;
-    height: 500px;
-    gap: 50px;
-    padding-left: 90px;
-  }
+/*   @media all and (max-width: 768px) {
+    margin-top: ;
+    width: ;
+    height: ;
+    gap: ;
+    padding-left: ;
+  } */
 &__image{
     align-self: center;
     justify-self: center;
@@ -58,10 +63,10 @@
    
 }
 &__name{
-    font-size: 20px;
-    @media all and (max-width: 768px) {
-        font-size: 30px;  
-    }
+  font-size: 30px;  
+  /*   @media all and (max-width: 768px) {
+        font-size: ;  
+    } */
 }
 .detailspan{
     font-weight: 200;
