@@ -1,4 +1,4 @@
-# Rick and Morty Characters Info
+# Rick and Morty Characters Info   :space_invader:  :rocket:  :rainbow:  :alien:
 
 ![Rick-Morty-Sexta-Temporada](https://user-images.githubusercontent.com/112553001/207452667-e69eeb74-3d1c-475e-b676-9bf14387baf4.jpg)
 
@@ -12,11 +12,11 @@ Está dentro de una estructura de carpetas preparada para poder funcionar, los a
 
 Si el proyecto no tiene la carpeta node_modules, deberñas ejecutar el siguiente comando:
 
-npm install
+> npm install
 
 Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. **El proyecto hay que arrancarlo cada vez que te pongas a programar.** Para ello ejecuta el comando:
 
-npm start
+> npm start
 
 Con este comando se podrá abrir la web del mismo modo que lo haría el Live Server (Go live) de VSCode.
 
@@ -42,7 +42,8 @@ Otro método alternativo de búsqueda es el select, donde se filtra la especie c
 
 El proyecto tiene una estructura de componentes mediante React, este es el listado de los componentes:
 
-- :diamonds: **App.js**
+### :star::star: **App.js**
+ 
   Este es el componente que maneja toda la aplicación. Aquí se crea la estructura de html que recibe en el body. Aquí encontramos las variables de estado relacionadas con los datos que necesita la página para funcionar: la variable donde se guardan los datos para pintar todas las tatjetas de los personajes así como las variables que guardan los filtros de búsqueda.
 
   Encontramos tambien el hook useEffect que es lo que necesitamos para que carguen los datos de la api cuando carga la página.
@@ -50,57 +51,63 @@ El proyecto tiene una estructura de componentes mediante React, este es el lista
 
   Estas son las funciones manejadoras que se declaran aquí y será en el en el componente hija donde se ejecuten las funciones:
 
-  - <strong>handleFilterName </strong> filtra por el nombre y se actualiza la variable de estado <strong>setFilterByName</strong>
+  :sparkles: <strong>handleFilterName </strong> filtra por el nombre y se actualiza la variable de estado <strong>setFilterByName</strong>
 
-  - <strong>handleFilterBySpecie</strong> filtra por la especie y se actualiza la variable de estado <strong>handleFilterBySpecie</strong>
+  :sparkles: <strong>handleFilterBySpecie</strong> filtra por la especie y se actualiza la variable de estado <strong>handleFilterBySpecie</strong>
 
-  - <strong>handleFilterByStatus </strong> filtra por el estatus y se actualiza la variable de estado <strong>characterData</strong>
+  :sparkles: <strong>handleFilterByStatus </strong> filtra por el estatus y se actualiza la variable de estado <strong>characterData</strong>
 
-  - <strong>filterCharacters</strong> esta variable contiene nuestro encadenado de filtrados y sus condiciones, para que se cumplan lo que necesitamos encontrar
+  :sparkles: <strong>filterCharacters</strong> esta variable contiene nuestro encadenado de filtrados y sus condiciones, para que se cumplan lo que necesitamos encontrar
 
-  - <strong>findCharacter</strong> esta funcion nos localiza el id del personaje
+  :sparkles: <strong>findCharacter</strong> esta funcion nos localiza el id del personaje
 
-  - <strong>handleReset</strong> se actualiza la variable de estado <strong>characterData</strong> se vacía las variables de estado de los filtros también se hace un reseteo del <strong>localStorage</strong> y del value de nuestro input de búsqueda.
+  :sparkles: <strong>handleReset</strong> se actualiza la variable de estado <strong>characterData</strong> se vacía las variables de estado de los filtros también se hace un reseteo del <strong>localStorage</strong> y del value de nuestro input de búsqueda.
 
-  - <strong>return</strong> donde tenemos todo lo que devuelve este componente principal y aparece en el DOM. aquí mostrará siempre el contenido de la etiqueta header y según el camino que tome la ruta, estaremos en la Home, o bien en las páginas detalle de los personajes o bien si no encuentra una url válida, mostrará una página de error
+  :sparkles: <strong>return</strong> donde tenemos todo lo que devuelve este componente principal y aparece en el DOM. aquí mostrará siempre el contenido de la etiqueta header y según el camino que tome la ruta, estaremos en la Home, o bien en las páginas detalle de los personajes o bien si no encuentra una url válida, mostrará una página de error
 
-- :diamonds: **CharacterCardFromList.js**
+### :star: **CharacterCardFromList.js**
 
-  - <strong>checkSpecies</strong> una funcion que trabaja un condicional, dependiendo de la especie a la que pertenezca el personaje pintará un icono u otro
+  :sparkles: <strong>checkSpecies</strong> una funcion que trabaja un condicional, dependiendo de la especie a la que pertenezca el personaje pintará un icono u otro
 
-  - <strong>checkStatus</strong> una funcion que trabaja un condicional, dependiendo del estado a la que pertenezca el personaje pintará un icono u otro
+  :sparkles: <strong>checkStatus</strong> una funcion que trabaja un condicional, dependiendo del estado a la que pertenezca el personaje pintará un icono u otro
 
-  - <strong>return</strong> pinta todo el html de de la tarjeta de cada personaje, tiene un link a modo de enlace para ir a la página de detalle del personaje, el componente <strong>CharacterDetail</strong> .
+  :sparkles: <strong>return</strong> pinta todo el html de de la tarjeta de cada personaje, tiene un link a modo de enlace para ir a la página de detalle del personaje, el componente <strong>CharacterDetail</strong> .
 
-- :diamonds: **CharacterDetail.js**
+### :star: **CharacterDetail.js**
 
-  - <strong>checkSpecies</strong> una funcion que trabaja un condicional, dependiendo de la especie a la que pertenezca el personaje pintará un icono u otro
+  :sparkles: <strong>checkSpecies</strong> una funcion que trabaja un condicional, dependiendo de la especie a la que pertenezca el personaje pintará un icono u otro
 
-  - <strong>checkStatus</strong> una funcion que trabaja un condicional, dependiendo del estado a la que pertenezca el personaje pintará un icono u otro
+  :sparkles: <strong>checkStatus</strong> una funcion que trabaja un condicional, dependiendo del estado a la que pertenezca el personaje pintará un icono u otro
 
-  - <strong>return</strong> pinta todo el html de detalle de la tarjeta de cada personaje, tiene un link a modo de enlace para volver a la página anterior, la página de inicio.
+  :sparkles: <strong>return</strong> pinta todo el html de detalle de la tarjeta de cada personaje, tiene un link a modo de enlace para volver a la página anterior, la página de inicio.
 
-- :diamonds: **CharacterList.js**
+### :star: **CharacterList.js**
+ 
   si nuestro array donde tenemos los personajes no está vacío, es decir que tiene al menos un elemento ( dependerá de lo que busquemos en nuestro formulario al filtrar, porque es el dato que traemos del componente madre) pintará mediante un map el compomnente <strong>CharacterCardFromList</strong> o los componentes que sean resultado de la búsqueda, si no encuentra ningún elemento en el array, es decir que está vacío pintará el componente <strong>NotFoundPage</strong> con un mensaje de error.
 
-- :diamonds: **Filters.js**
+### :star: **Filters.js**
+ 
   en este componente tenemos todas las funciones de eventos para ejecutarse
-  - <strong>handleInput</strong> para ejecutar el evento onInput del buscador por nombre
-  - <strong>handleOnChange</strong> para ejecutar el evento onChange del select
-  - <strong>handleOnClick</strong> para ejecutar el evento onClick del botón reset
-  - <strong>handleSubmit</strong> para evitar que el formulario se dispare y navegue sin querer, si por error pulsamos intro
-  - <strong>handleOnChangeChecked</strong> para ejecutar el evento onChange del checkbox
-  - <strong>renderStatus</strong> para evitar tener que poner a mano el array de opciones del select, aquí tenemos un map que pinta por cada estatus de personaje un input de tipo checkbox
-  - <strong>return</strong> pinta el formulario con los tres tipos de filtro y el botón reset
-- :diamonds: **NotFoundPage.js**
+  :grey_exclamation: <strong>handleInput</strong> para ejecutar el evento onInput del buscador por nombre
+  :grey_exclamation: <strong>handleOnChange</strong> para ejecutar el evento onChange del select
+  :grey_exclamation: <strong>handleOnClick</strong> para ejecutar el evento onClick del botón reset
+  :grey_exclamation: <strong>handleSubmit</strong> para evitar que el formulario se dispare y navegue sin querer, si por error pulsamos intro
+  :grey_exclamation: <strong>handleOnChangeChecked</strong> para ejecutar el evento onChange del checkbox
+  :grey_exclamation: <strong>renderStatus</strong> para evitar tener que poner a mano el array de opciones del select, aquí tenemos un map que pinta por cada estatus de personaje un input de tipo checkbox
+  :grey_exclamation: <strong>return</strong> pinta el formulario con los tres tipos de filtro y el botón reset
+  
+### :star: **NotFoundPage.js**
+ 
   componente que nos da un mensaje cuando no encuentra la url que estamos buscando, lo encontramos tanto en el caso de no encontrar la ruta desde app como desde el listado de las tar
 
 Los archivos de servicios:
 
-- :gem: **services/api.js**
+### :thought_balloon: **services/api.js**
+ 
   En este archivo encontramos la petición al servidor, donde traemos los datos que necesitamos desde la API, los ordenamos alfabéticamente según el nombre de dada personaje y lo llevamos hasta nuestra variable de estado, y lo guardamos en el localstorage. https://rickandmortyapi.com
 
-- :gem: **services/localStorage.js**
+### :thought_balloon: **services/localStorage.js**
+ 
   Es una plantilla super válida y valiosa para la gestión de local storage, tieniendo incluidas las funciones set, get, clean y remove, que crean dan, limpian y borran lo guardado en el local storage dependiendo de qué necesitemos en cada momento.
 
 Esto es todo, espero que disfutes del proyecto y si tienes cualquier sugerencia no dudes en comentarmela :smile:
