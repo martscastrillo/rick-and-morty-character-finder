@@ -40,7 +40,6 @@ function App() {
 		ls.set('status', filterByStatus);
 	};
 	const handleReset = () => {
-		console.log('entró por aquí');
 		setCharacterData([...characterData]);
 		setFilterByName('');
 		setFilterByStatus([]);

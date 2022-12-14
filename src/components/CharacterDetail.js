@@ -7,7 +7,7 @@ import Alive from "../images/Alive.png";
 import Human from "../images/Human.png";
 import unknown from "../images/unknown.png";
 import NotFoundPage from './NotFoundPage';
-const CharacterCardFromList = (props) => {
+const CharacterDetail = (props) => {
 	const params = useParams();
 
 	const characterFound = props.findCharacter(params.characterId);
@@ -109,4 +109,4 @@ const CharacterCardFromList = (props) => {
     return <NotFoundPage />;
 	}
 };
-export default CharacterCardFromList;
+export default CharacterDetail;

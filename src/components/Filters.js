@@ -10,21 +10,18 @@ const Filters = (props) => {
 	const handleOnChangeChecked = (ev) => {
 		props.handleFilterByStatus(ev.target.value);
 	};
-
 	const handleSubmit = (ev) => {
 		ev.preventDefault();
 	};
 	const handleOnClick = () => {
 		props.handleReset();
-		
 	};
-	const renderStatus = () =>{
+	const renderStatus = () => {
 		const characterStatus = props.characterData.map((eachCharacter) => {
 			return eachCharacter.status;
-		  });
-	  
-		  const newSet = new Set(characterStatus);
-		  const oneStatus = [...newSet];
+		});
+		const newSet = new Set(characterStatus);
+		const oneStatus = [...newSet];
 
 		return oneStatus.map((oneStatus, index) => {
 			return (
@@ -41,9 +38,8 @@ const Filters = (props) => {
 					<label htmlFor={oneStatus}>{oneStatus}</label>
 				</span>
 			);
-		})
-	}
-	
+		});
+	};
 
 	return (
 		<form className="formbox" onSubmit={handleSubmit}>
