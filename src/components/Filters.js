@@ -4,6 +4,9 @@ const Filters = (props) => {
 	const handleInput = (ev) => {
 		props.handleFilterName(ev.target.value);
 	};
+	const handleInputEpisode = (ev) => {
+		props.handleFilterEpisode(ev.target.value);
+	};
 	const handleOnChange = (ev) => {
 		props.handleFilterBySpecie(ev.target.value);
 	};
@@ -49,6 +52,13 @@ const Filters = (props) => {
 				placeholder="Search"
 				value={props.filterByName}
 				onInput={handleInput}
+			/>
+				<input
+				className="formbox__input"
+				type="number"
+				placeholder="Search episode"
+				value={props.filterByEpisode}
+				onChange={handleInputEpisode}
 			/>
 			<div className="select">
 				<select

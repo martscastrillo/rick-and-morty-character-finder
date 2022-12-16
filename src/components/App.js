@@ -13,21 +13,24 @@ function App() {
 	const [filterByName, setFilterByName] = useState("");
 	const [filterBySpecie, setFilterBySpecie] = useState("All");
 	const [filterByStatus, setFilterByStatus] = useState([]);
+	const [filterByEpisode, setFilterByEpisode] = useState(0);
 	useEffect(() => {
-			const localStorage = ls.get("data");
-		if (localStorage === null) {
+		
+		
 		getDataFromAPI().then((cleanData) => {
 			setCharacterData(cleanData);
 			ls.set("data", cleanData);
 		});
-		} else {
-			setCharacterData(localStorage);
-		}
+		
 	}, []);
 
 	const handleFilterName = (value) => {
 		setFilterByName(value);
 		ls.set("input", value);
+	};
+	const handleFilterEpisode = (value) => {
+		setFilterByEpisode(value);
+		
 	};
 	const handleFilterBySpecie = (value) => {
 		setFilterBySpecie(value);
@@ -50,6 +53,22 @@ function App() {
 		.filter((eachCharacter) =>
 			eachCharacter.name.toLowerCase().includes(filterByName.toLowerCase())
 		)
+		.filter((eachCharacter) =>{
+		
+			let result = "";
+			if (parseInt(filterByEpisode) === 0){
+				result = true;
+				return result;
+			}
+			else if (parseInt(filterByEpisode)  === eachCharacter.episode.length ) {
+				result = true;
+				return result;
+			}
+
+			return result;
+		}
+		
+	)
 		.filter((eachCharacter) => {
 			let result = "";
 			if (filterBySpecie === "All") {
@@ -98,6 +117,8 @@ function App() {
 								handleFilterByStatus={handleFilterByStatus}
 								filterByStatus={filterByStatus}
 								characterData={characterData}
+								filterByEpisode={filterByEpisode}
+								handleFilterEpisode={handleFilterEpisode}
 							/>
 							<CharacterList data={filterCharacters}></CharacterList>
 						</div>
