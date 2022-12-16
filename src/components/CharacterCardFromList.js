@@ -80,7 +80,7 @@ const CharacterCardFromList = ({ character }) => {
 						</span>
 						<span className="textbluebox__status">
 							<h3 className="card__status"> {character.status}</h3>
-							{checkStatus()}{" "}
+							{checkStatus()}
 						</span>
 					</div>
 				</div>

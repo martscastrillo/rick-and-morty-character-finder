@@ -1,3 +1,8 @@
+.diverror{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 .error {
 	height: 50vh;
     font-size: 40px;
@@ -19,5 +24,17 @@
         text-transform: none;
         color: #0bcaba;
         font-size: 20px;    
+	}
+}
+.linkerror {
+
+	color: purple;
+	font-size: 22px;
+    text-shadow: 0 0 2px purple, 0 0 5px purple, 0 0 5px rgb(255, 167, 255), 0 0 5px rgb(255, 167, 255),
+    0 0 5px rgb(255, 167, 255), 0 0 10px rgb(255, 167, 255);
+	&:hover {
+		color: white;
+		text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px purple, 0 0 15px purple,
+			0 0 10px purple, 0 0 20px purple;
 	}
 }

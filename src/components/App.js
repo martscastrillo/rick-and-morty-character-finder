@@ -14,15 +14,12 @@ function App() {
 	const [filterBySpecie, setFilterBySpecie] = useState("All");
 	const [filterByStatus, setFilterByStatus] = useState([]);
 	useEffect(() => {
-			const localStorage = ls.get("data");
-		if (localStorage === null) {
+	
 		getDataFromAPI().then((cleanData) => {
 			setCharacterData(cleanData);
 			ls.set("data", cleanData);
 		});
-		} else {
-			setCharacterData(localStorage);
-		}
+		
 	}, []);
 
 	const handleFilterName = (value) => {
@@ -44,6 +41,7 @@ function App() {
 		setFilterBySpecie("All");
 		ls.remove("specie");
 		ls.remove("input");
+		ls.remove("status");
 	};
 
 	const filterCharacters = characterData
@@ -90,6 +88,7 @@ function App() {
 					element={
 						<div className="main">
 							<Filters
+							
 								handleFilterName={handleFilterName}
 								filterByName={filterByName}
 								handleFilterBySpecie={handleFilterBySpecie}
