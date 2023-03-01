@@ -1,6 +1,6 @@
 import "../styles/Filters.scss";
 import FilterName from "./FilterName";
-import FilterByStatus from "./FilterByStatus";
+/* import FilterByStatus from "./FilterByStatus"; */
 import FilterBySpecie from "./FilterBySpecie";
 
 const Filters = (props) => {
@@ -21,11 +21,11 @@ const Filters = (props) => {
 				handleFilterBySpecie={props.handleFilterBySpecie}
 				filterBySpecie={props.filterBySpecie}
 			></FilterBySpecie>
-			<FilterByStatus
+		{/* 	<FilterByStatus
 				filterByStatus={props.filterByStatus}
 				characterData={props.characterData}
 				handleFilterByStatus={props.handleFilterByStatus}
-			></FilterByStatus>
+			></FilterByStatus> */}
 
 			<button className="formbox__btn" onClick={handleOnClick}>
 				Reset
