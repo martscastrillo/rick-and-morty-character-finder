@@ -5,36 +5,55 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin-bottom: 300px;
+	margin-bottom: 100px;
+	@media all and (min-width: 768px){
+		margin-bottom: 300px;
+		}
+	
 }
 .link {
-	transform: translate(350px, 170px);
+	transform: translate(120px, 70px);
 	color: purple;
-	font-size: 22px;
+	font-size: 18px;
 	&:hover {
 		color: white;
 		text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px purple, 0 0 15px purple,
 			0 0 10px purple, 0 0 20px purple;
 	}
+	@media all and (min-width: 768px){
+		transform: translate(350px, 170px);
+		font-size: 22px;
+		}
 }
 .detail {
-	margin-top: 200px;
+	margin-top: 100px;
 	color: white;
 	background-color: #1a5b35;
 	border-radius: 6px;
-	width: 800px;
-	height: 450px;
+	width: 300px;
+	height: 550px;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	padding-left: 90px;
+	justify-content: center;
+	flex-direction: column;
+	padding-left: 30px;
+	padding-left: 30px;
 	gap: 50px;
 	font-family: $font-main;
 	box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
 		0 0 30px #a4f59c, 0 0 40px #a4f59c;
+		@media all and (min-width: 768px){
+			margin-top: 200px;
+		flex-direction: row;
+		width: 800px;
+		height: 450px;
+		padding-left: 90px;
+		justify-content: flex-start;
+		}
 	&__image {
 		align-self: center;
 		justify-self: center;
+		width: 200px;
 		&:hover {
 			transform: scale(1.05, 1.05);
 			transition: transform 2s;
@@ -51,7 +70,16 @@
 		gap: 20px;
 	}
 	&__name {
-		font-size: 30px;
+		font-size: 18px;
+		@media all and (min-width: 768px){
+			font-size: 30px;
+			}
+	}
+	&__status, &__origin, &__species, &__episodes {
+		font-size: 14px;
+		@media all and (min-width: 768px){
+			font-size: 30px;
+			}
 	}
 	.detailspan {
 		font-weight: 200;

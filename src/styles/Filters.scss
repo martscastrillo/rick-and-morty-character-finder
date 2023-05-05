@@ -5,10 +5,10 @@
 	flex-direction: row;
 	align-items: center;
 	padding: 40px;
-	gap: 40px;
+	gap: 20px;
 	&__input {
 		color: gray;
-		width: 300px;
+		width: 200px;
 		padding: 10px;
 		font-size: 16px;
 		height: 40px;
@@ -18,6 +18,9 @@
 		border-radius: 4px;
 		box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0ba9ca, 0 0 15px #0ba9ca,
 			0 0 30px #0ba9ca, 0 0 40px #0ba9ca;
+			@media all and (min-width: 768px){
+				width: 300px;
+			}
 	}
 	.select {
 		box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #0bca87, 0 0 15px #0bca87,
@@ -39,7 +42,7 @@
 		text-transform: uppercase;
 		padding: 5px 10px 5px 10px;
 		color: white;
-		font-size: 20px;
+		font-size: 16px;
 		background-color: purple;
 		border: 0;
 		border-radius: 10px;
@@ -47,6 +50,9 @@
 		box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px rgb(255, 143, 255),
 			0 0 15px rgb(255, 143, 255), 0 0 30px rgb(255, 143, 255),
 			0 0 40px rgb(255, 143, 255);
+			@media all and (min-width: 768px){
+				font-size: 20px;
+			}
 		&:hover {
 			transform: scale(1.05, 1.05);
 			transition: transform 2s;
@@ -72,5 +78,8 @@
 					0 0 15px #0ba9ca, 0 0 30px #0ba9ca, 0 0 40px #0ba9ca;
 			}
 		}
+	}
+	@media all and (min-width: 768px){
+		gap: 40px;
 	}
 }
