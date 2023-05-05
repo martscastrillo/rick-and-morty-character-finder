@@ -7,7 +7,7 @@
 	flex-direction: column;
 	margin-bottom: 100px;
 	@media all and (min-width: 768px){
-		margin-bottom: 300px;
+		margin-bottom: 100px;
 		}
 	
 }
@@ -21,7 +21,7 @@
 			0 0 10px purple, 0 0 20px purple;
 	}
 	@media all and (min-width: 768px){
-		transform: translate(350px, 170px);
+		transform: translate(350px, 70px);
 		font-size: 22px;
 		}
 }
@@ -43,7 +43,7 @@
 	box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #a4f59c, 0 0 15px #a4f59c,
 		0 0 30px #a4f59c, 0 0 40px #a4f59c;
 		@media all and (min-width: 768px){
-			margin-top: 200px;
+			margin-top: 100px;
 		flex-direction: row;
 		width: 800px;
 		height: 450px;
