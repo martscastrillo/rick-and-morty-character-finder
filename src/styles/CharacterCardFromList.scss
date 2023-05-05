@@ -78,10 +78,12 @@
 		@media all and (min-width: 768px){
 			width: 275px;
 		}
+		&-species {
+			width: 18px;	
+	
+		}
 	}
-	&__img-species {
-		width: 18px;
-	}
+	
 	.logobox {
 		display: flex;
 		flex-direction: row;
