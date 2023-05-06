@@ -118,9 +118,14 @@ Esto es todo, espero que disfutes del proyecto y si tienes cualquier sugerencia 
 <img width="2032" alt="Captura de Pantalla 2023-05-05 a las 14 25 44" src="https://user-images.githubusercontent.com/112553001/236457513-05de669c-b72b-4af1-86d0-2b19d1058386.png">
 <img width="2041" alt="Captura de Pantalla 2023-05-05 a las 14 27 19" src="https://user-images.githubusercontent.com/112553001/236457534-43c9f3e5-f904-4e84-86b2-c0010b287b55.png">
 <div style="display:flex;">
-<img width="400" alt="Captura de Pantalla 2023-05-05 a las 14 35 59" src="https://user-images.githubusercontent.com/112553001/236459074-71314f31-0ecc-45ca-af79-3c2795dd3547.png">
 
 
-<img width="400" alt="Captura de Pantalla 2023-05-05 a las 14 23 41" src="https://user-images.githubusercontent.com/112553001/236456905-dc33fb6e-870d-4e47-9c81-d49cd62fbf0d.png">
+
+<img width="400" alt="Captura de Pantalla 2023-05-05 a las 14 23 41" src="https://user-images.githubusercontent.com/112553001/236614066-448e0c06-44d1-4961-b01b-c3697ec08c4c.png">
+ <img width="400" alt="Captura de Pantalla 2023-05-05 a las 14 35 59" src="https://user-images.githubusercontent.com/112553001/236614109-7c3d0cc8-eb43-45eb-8a01-3adfff310a82.png">
 </div>
+
+
+
+
 
