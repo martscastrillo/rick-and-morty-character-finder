@@ -1,8 +1,12 @@
 @import './core/Variables';
 @import './core/Reset';
 body{
-    background-color: #000000;
+
     font-family:$font-main;
+ 
+        background-color: #000000;
+
+
 }
 .header{
     height: 200px;
@@ -16,9 +20,7 @@ body{
         height: 350px;
 	}
    }
-   @media all and (min-width: 768px){
-    height: 300px;
-}
+  
 }
 .main{
     margin: 10px;
